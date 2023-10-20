@@ -28,4 +28,13 @@ export class UserListComponent implements OnInit {
     });
 
   }
+
+
+  editUser(userId: string) {
+    console.log(`Editar: ${userId}`);
+  }
+
+  deleteUser(userId: string) {
+    console.log(`Eliminar: ${userId}`);
+  }
 }

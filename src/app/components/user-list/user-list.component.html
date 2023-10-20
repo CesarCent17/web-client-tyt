@@ -31,10 +31,20 @@
 
   <ng-container matColumnDef="acciones">
     <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
-    <mat-cell *matCellDef="let user">{{ user.lastName }}</mat-cell>
+    <mat-cell *matCellDef="let user">
+      <!-- Botón de Editar -->
+      <button mat-icon-button (click)="editUser(user.id)">
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <!-- Botón de Eliminar -->
+      <button mat-icon-button (click)="deleteUser(user.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
   </ng-container>
 
-  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  <mat-header-row *matHeaderRowDef="displayedColumns" ></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns" class="example-element-row"></mat-row>
 
 </mat-table>
