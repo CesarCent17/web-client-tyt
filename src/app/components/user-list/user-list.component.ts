@@ -12,7 +12,9 @@ import { Observable, map } from 'rxjs';
 })
 export class UserListComponent implements OnInit {
 
-  public displayedCols: string[] = [ "username","email","lastName","departmentId","jobTitleId", "actions"]
+  // public displayedCols: string[] = [ "username","email","lastName","departmentId","jobTitleId", "actions"]
+  public displayedCols: string[] = [ "username","firstName","lastName","departmentId","jobTitleId", "email","actions"]
+
   private userService = inject(UserService)
   public dataSource$: Observable<ApiResponse<User[]>> = this.userService.getUsers()
 
