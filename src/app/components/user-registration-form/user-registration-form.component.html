@@ -1,1 +1,38 @@
-<p>user-registration-form works!</p>
+<form [formGroup]="userForm">
+  <mat-form-field>
+    <input matInput placeholder="Username" formControlName="username">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Email" formControlName="email">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="First Name" formControlName="firstName">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Middle Name" formControlName="middleName">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Last Name" formControlName="lastName">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Second Last Name" formControlName="secondLastName">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Department ID" formControlName="departmentId">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Job Title ID" formControlName="jobTitleId">
+  </mat-form-field>
+
+  <div class="buttons">
+    <button mat-button (click)="saveUser()" color="primary">Guardar</button>
+    <button mat-button (click)="cancel()" color="warn">Cancelar</button>
+  </div>
+</form>

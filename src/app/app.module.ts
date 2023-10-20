@@ -14,6 +14,8 @@ import {MatSelectModule} from '@angular/material/select';
 import { SelectGenericComponent } from './components/select-generic/select-generic.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { UserRegistrationFormComponent } from './components/user-registration-form/user-registration-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -33,7 +35,8 @@ import { UserRegistrationFormComponent } from './components/user-registration-fo
     MatIconModule,
     MatToolbarModule,
     MatSelectModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

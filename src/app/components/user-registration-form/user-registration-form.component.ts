@@ -1,29 +1,42 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { User } from '../../interfaces/user';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-user-registration-form',
   templateUrl: 'user-registration-form.component.html',
-  styleUrls: ['./user-registration-form.component.sass']
+  styleUrls: ['./user-registration-form.component.sass'],
 })
 export class UserRegistrationFormComponent {
-  user: User;
+  userForm: FormGroup;
 
   constructor(
-    public dialogRef: MatDialogRef<UserRegistrationFormComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: User
+    private dialogRef: MatDialogRef<UserRegistrationFormComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private formBuilder: FormBuilder
   ) {
-    this.user = data;
+    this.userForm = this.formBuilder.group({
+      username: data.username,
+      email: data.email,
+      firstName: data.firstName,
+      middleName: data.middleName,
+      lastName: data.lastName,
+      secondLastName: data.secondLastName,
+      departmentId: data.departmentId,
+      jobTitleId: data.jobTitleId
+    });
   }
 
-  onSave(): void {
+
+  saveUser(): void {
     // Aquí puedes realizar acciones al guardar el formulario
     // Por ejemplo, enviar los datos al servidor
-    this.dialogRef.close(this.user);
+    const userData = this.userForm.value;
+    this.dialogRef.close(userData);
   }
 
-  onCancel(): void {
+  cancel(): void {
     this.dialogRef.close();
   }
 }
