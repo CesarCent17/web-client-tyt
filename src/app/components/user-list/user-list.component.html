@@ -1,0 +1,40 @@
+<mat-table [dataSource]="users">
+  <ng-container matColumnDef="username">
+    <mat-header-cell *matHeaderCellDef>Usuario</mat-header-cell>
+    <mat-cell *matCellDef="let user">{{ user.username }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="firstName">
+    <mat-header-cell *matHeaderCellDef>Nombres</mat-header-cell>
+    <mat-cell *matCellDef="let user">{{ user.firstName }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="lastName">
+    <mat-header-cell *matHeaderCellDef>Apellidos</mat-header-cell>
+    <mat-cell *matCellDef="let user">{{ user.lastName }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="departmentId">
+    <mat-header-cell *matHeaderCellDef>Departemento</mat-header-cell>
+    <mat-cell *matCellDef="let user">{{ user.departmentId }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="jobTitleId">
+    <mat-header-cell *matHeaderCellDef>Cargo</mat-header-cell>
+    <mat-cell *matCellDef="let user">{{ user.jobTitleId }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+    <mat-cell *matCellDef="let user">{{ user.email }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="acciones">
+    <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
+    <mat-cell *matCellDef="let user">{{ user.lastName }}</mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+</mat-table>
