@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { ApiResponse } from '../../interfaces/api-response';
 import { User } from '../../interfaces/user';
+import { Observable, map } from 'rxjs';
 
 
 @Component({
@@ -10,22 +11,12 @@ import { User } from '../../interfaces/user';
   styleUrls: ['./user-list.component.sass']
 })
 export class UserListComponent implements OnInit {
-  users: User[] = [];
 
-  displayedColumns: string[] = ['username', 'firstName', 'lastName', 'departmentId', 'jobTitleId', 'email', 'acciones'];
-  totalUsers: number = 0;
-
-  constructor(private userService: UserService) {}
+  public displayedCols: string[] = [ "username","email","lastName","departmentId","jobTitleId", "actions"]
+  private userService = inject(UserService)
+  public dataSource$: Observable<ApiResponse<User[]>> = this.userService.getUsers()
 
   ngOnInit(): void {
-    this.userService.getUsers().subscribe((response: ApiResponse<User[]>) => {
-      if (response.succeeded) {
-        this.users = response.data;
-        this.totalUsers = this.users.length;
-      } else {
-        console.log(response);
-      }
-    });
 
   }
 

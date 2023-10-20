@@ -1,50 +1,63 @@
-<mat-table [dataSource]="users">
-  <ng-container matColumnDef="username">
-    <mat-header-cell *matHeaderCellDef>Usuario</mat-header-cell>
-    <mat-cell *matCellDef="let user">{{ user.username }}</mat-cell>
-  </ng-container>
+<section class="example-container mat-elevation-z8" tabindex="0">
+  <table *ngIf="(dataSource$ | async) as response" mat-table [dataSource]="response.data">
+    <ng-container matColumnDef="username">
+      <mat-header-cell *matHeaderCellDef>Usuario</mat-header-cell>
+      <mat-cell *matCellDef="let user">{{ user.username }}</mat-cell>
+      <mat-footer-cell *matFooterCellDef>
+        <span> Total Registros: {{response.data.length}}</span>
+      </mat-footer-cell>
+    </ng-container>
 
-  <ng-container matColumnDef="firstName">
-    <mat-header-cell *matHeaderCellDef>Nombres</mat-header-cell>
-    <mat-cell *matCellDef="let user">{{ user.firstName }}</mat-cell>
-  </ng-container>
+    <ng-container matColumnDef="firstName">
+      <mat-header-cell *matHeaderCellDef>Nombres</mat-header-cell>
+      <mat-cell *matCellDef="let user">{{ user.firstName }}</mat-cell>
+      <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+    </ng-container>
 
-  <ng-container matColumnDef="lastName">
-    <mat-header-cell *matHeaderCellDef>Apellidos</mat-header-cell>
-    <mat-cell *matCellDef="let user">{{ user.lastName }}</mat-cell>
-  </ng-container>
+    <ng-container matColumnDef="lastName">
+      <mat-header-cell *matHeaderCellDef>Apellidos</mat-header-cell>
+      <mat-cell *matCellDef="let user">{{ user.lastName }}</mat-cell>
+      <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+    </ng-container>
 
-  <ng-container matColumnDef="departmentId">
-    <mat-header-cell *matHeaderCellDef>Departemento</mat-header-cell>
-    <mat-cell *matCellDef="let user">{{ user.departmentId }}</mat-cell>
-  </ng-container>
+    <ng-container matColumnDef="departmentId">
+      <mat-header-cell *matHeaderCellDef>Departemento</mat-header-cell>
+      <mat-cell *matCellDef="let user">{{ user.departmentId }}</mat-cell>
+      <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+    </ng-container>
 
-  <ng-container matColumnDef="jobTitleId">
-    <mat-header-cell *matHeaderCellDef>Cargo</mat-header-cell>
-    <mat-cell *matCellDef="let user">{{ user.jobTitleId }}</mat-cell>
-  </ng-container>
+    <ng-container matColumnDef="jobTitleId">
+      <mat-header-cell *matHeaderCellDef>Cargo</mat-header-cell>
+      <mat-cell *matCellDef="let user">{{ user.jobTitleId }}</mat-cell>
+      <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+    </ng-container>
 
-  <ng-container matColumnDef="email">
-    <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
-    <mat-cell *matCellDef="let user">{{ user.email }}</mat-cell>
-  </ng-container>
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+      <mat-cell *matCellDef="let user">{{ user.email }}</mat-cell>
+      <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+    </ng-container>
 
-  <ng-container matColumnDef="acciones">
-    <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
-    <mat-cell *matCellDef="let user">
-      <!-- Botón de Editar -->
-      <button mat-icon-button (click)="editUser(user.id)">
-        <mat-icon>edit</mat-icon>
-      </button>
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef>Acciones</mat-header-cell>
+      <mat-cell *matCellDef="let user">
+        <button mat-icon-button (click)="editUser(user.id)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="deleteUser(user.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-cell>
+      <mat-footer-cell *matFooterCellDef>
 
-      <!-- Botón de Eliminar -->
-      <button mat-icon-button (click)="deleteUser(user.id)">
-        <mat-icon>delete</mat-icon>
-      </button>
-    </mat-cell>
-  </ng-container>
+      </mat-footer-cell>
+    </ng-container>
 
-  <mat-header-row *matHeaderRowDef="displayedColumns" ></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns" class="example-element-row"></mat-row>
+    <mat-header-row *matHeaderRowDef="displayedCols" ></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedCols" class="example-element-row"></mat-row>
+    <mat-footer-row *matFooterRowDef="displayedCols; sticky: true"></mat-footer-row>
+  </table>
+  <div>
 
-</mat-table>
+  </div>
+</section>
