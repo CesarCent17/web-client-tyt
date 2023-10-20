@@ -15,7 +15,7 @@ import { SelectGenericComponent } from './components/select-generic/select-gener
 import {MatDialogModule} from '@angular/material/dialog';
 import { UserRegistrationFormComponent } from './components/user-registration-form/user-registration-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -36,6 +36,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatToolbarModule,
     MatSelectModule,
     MatDialogModule,
+    MatGridListModule,
     ReactiveFormsModule
   ],
   providers: [],

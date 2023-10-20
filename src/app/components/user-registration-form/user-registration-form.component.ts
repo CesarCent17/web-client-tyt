@@ -28,10 +28,20 @@ export class UserRegistrationFormComponent {
     });
   }
 
+  departments = [
+    { value: 'dep1', viewValue: 'Departamento 1' },
+    { value: 'dep2', viewValue: 'Departamento 2' },
+    { value: 'dep3', viewValue: 'Departamento 3' },
+  ];
+
+  jobTitles = [
+    { value: 'title1', viewValue: 'Cargo 1' },
+    { value: 'title2', viewValue: 'Cargo 2' },
+    { value: 'title3', viewValue: 'Cargo 3' },
+  ];
+
 
   saveUser(): void {
-    // Aquí puedes realizar acciones al guardar el formulario
-    // Por ejemplo, enviar los datos al servidor
     const userData = this.userForm.value;
     this.dialogRef.close(userData);
   }

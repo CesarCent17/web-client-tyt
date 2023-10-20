@@ -39,8 +39,6 @@ export class NavComponent {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        // Aquí puedes manejar los datos del usuario después de cerrar el diálogo
-        // Por ejemplo, enviar los datos al servidor
         console.log('Datos del usuario guardados:', result);
       }
     });

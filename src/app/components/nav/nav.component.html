@@ -1,9 +1,39 @@
-<p>
-  <mat-toolbar>
-    <span class="module-name">Módulo de Administración</span>
+<div class="container">
+  <div class="row-form">
+    <div class="col-form">
+      <span class="module-name">Módulo de Administración</span>
+    </div>
+  </div>
+
+  <div class="row-form">
     <span class="admin-name">Administración de usuarios</span>
-    <app-select-generic [label]="'Seleccione un departamento'" [options]="departments"></app-select-generic>
-    <app-select-generic [label]="'Seleccione un cargo'" [options]="jobTitles"></app-select-generic>
-    <button mat-raised-button (click)="openUserRegistrationDialog()">Crear nuevo usuario</button>
-  </mat-toolbar>
-</p>
+  </div>
+  <div class="row">
+    <div class="row-form-list">
+
+
+        <div class="col-form-select">
+
+
+            <app-select-generic
+              [label]="'Seleccione un departamento'"
+              [options]="departments"
+            ></app-select-generic>
+
+            <app-select-generic
+              [label]="'Seleccione un cargo'"
+              [options]="jobTitles"
+            ></app-select-generic>
+
+        </div>
+
+
+        <div class="">
+          <button mat-raised-button (click)="openUserRegistrationDialog()"class="btn-add-user">
+            Crear nuevo usuario
+          </button>
+        </div>
+
+    </div>
+  </div>
+</div>

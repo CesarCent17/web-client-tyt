@@ -1,38 +1,87 @@
-<form [formGroup]="userForm">
-  <mat-form-field>
-    <input matInput placeholder="Username" formControlName="username">
-  </mat-form-field>
+<form [formGroup]="userForm" class="modal-form">
+  <div class="form-colum">
+    <h3 class="title">
+    Registrar usuario
+    </h3>
+    </div>
+    <hr>
+  <div class="form">
 
-  <mat-form-field>
-    <input matInput placeholder="Email" formControlName="email">
-  </mat-form-field>
+  <div class="form-column" >
 
-  <mat-form-field>
-    <input matInput placeholder="First Name" formControlName="firstName">
-  </mat-form-field>
+    <!-- Columna 1 -->
 
-  <mat-form-field>
-    <input matInput placeholder="Middle Name" formControlName="middleName">
-  </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Department ID"
+          formControlName="departmentId"
+        />
+      </mat-form-field>
 
-  <mat-form-field>
-    <input matInput placeholder="Last Name" formControlName="lastName">
-  </mat-form-field>
+      <!-- <app-select-generic
+        [label]="'Seleccione un departamento'"
+        [options]="departments"
+      ></app-select-generic> -->
 
-  <mat-form-field>
-    <input matInput placeholder="Second Last Name" formControlName="secondLastName">
-  </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Username" formControlName="username"/>
+      </mat-form-field>
 
-  <mat-form-field>
-    <input matInput placeholder="Department ID" formControlName="departmentId">
-  </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="First Name" formControlName="firstName" />
+      </mat-form-field>
 
-  <mat-form-field>
-    <input matInput placeholder="Job Title ID" formControlName="jobTitleId">
-  </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Last Name" formControlName="lastName" />
+      </mat-form-field>
+
+    <!-- Columna 2 -->
+
+  </div>
+  <div class="form-column">
+
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="JobTitleId ID"
+        formControlName="jobTitleId"
+      />
+    </mat-form-field>
+
+    <!-- <app-select-generic
+      [label]="'Seleccione un cargo'"
+      [options]="jobTitles"
+    ></app-select-generic> -->
+
+    <mat-form-field>
+      <input matInput placeholder="Email" formControlName="email" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Middle Name"
+        formControlName="middleName"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Second Last Name"
+        formControlName="secondLastName"
+      />
+    </mat-form-field>
+  </div>
+</div>
 
   <div class="buttons">
-    <button mat-button (click)="saveUser()" color="primary">Guardar</button>
-    <button mat-button (click)="cancel()" color="warn">Cancelar</button>
+    <button mat-button (click)="saveUser()" color="primary"
+      class="add"
+    >Guardar</button>
+    <button mat-button (click)="cancel()" color="warn"
+      class="cancel"
+    >Cancelar</button>
   </div>
 </form>
