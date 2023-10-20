@@ -12,6 +12,8 @@ import { NavComponent } from './components/nav/nav.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSelectModule} from '@angular/material/select';
 import { SelectGenericComponent } from './components/select-generic/select-generic.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { UserRegistrationFormComponent } from './components/user-registration-form/user-registration-form.component';
 
 
 @NgModule({
@@ -20,6 +22,7 @@ import { SelectGenericComponent } from './components/select-generic/select-gener
     UserListComponent,
     NavComponent,
     SelectGenericComponent,
+    UserRegistrationFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import { SelectGenericComponent } from './components/select-generic/select-gener
     HttpClientModule,
     MatIconModule,
     MatToolbarModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

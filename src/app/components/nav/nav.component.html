@@ -4,5 +4,6 @@
     <span class="admin-name">Administración de usuarios</span>
     <app-select-generic [label]="'Seleccione un departamento'" [options]="departments"></app-select-generic>
     <app-select-generic [label]="'Seleccione un cargo'" [options]="jobTitles"></app-select-generic>
+    <button mat-raised-button (click)="openUserRegistrationDialog()">Crear nuevo usuario</button>
   </mat-toolbar>
 </p>
