@@ -9,8 +9,6 @@
 
   <div class="form-column" >
 
-    <!-- Columna 1 -->
-
       <mat-form-field>
         <input
           matInput
@@ -18,11 +16,6 @@
           formControlName="departmentId"
         />
       </mat-form-field>
-
-      <!-- <app-select-generic
-        [label]="'Seleccione un departamento'"
-        [options]="departments"
-      ></app-select-generic> -->
 
       <mat-form-field>
         <input matInput placeholder="Username" formControlName="username"/>
@@ -49,11 +42,6 @@
       />
     </mat-form-field>
 
-    <!-- <app-select-generic
-      [label]="'Seleccione un cargo'"
-      [options]="jobTitles"
-    ></app-select-generic> -->
-
     <mat-form-field>
       <input matInput placeholder="Email" formControlName="email" />
     </mat-form-field>
@@ -79,7 +67,7 @@
   <div class="buttons">
     <button mat-button (click)="saveUser()" color="primary"
       class="add"
-    >Guardar</button>
+    >Actualizar</button>
     <button mat-button (click)="cancel()" color="warn"
       class="cancel"
     >Cancelar</button>

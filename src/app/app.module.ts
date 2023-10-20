@@ -16,6 +16,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { UserRegistrationFormComponent } from './components/user-registration-form/user-registration-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { DialogDeleteComponent } from './components/dialog-delete/dialog-delete.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     NavComponent,
     SelectGenericComponent,
     UserRegistrationFormComponent,
+    DialogDeleteComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,9 @@ import { Component, OnInit, inject } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { ApiResponse } from '../../interfaces/api-response';
 import { User } from '../../interfaces/user';
+import { MatDialog } from '@angular/material/dialog';
 import { Observable, map } from 'rxjs';
+import { DialogDeleteComponent } from '../dialog-delete/dialog-delete.component';
 
 
 @Component({
@@ -11,6 +13,8 @@ import { Observable, map } from 'rxjs';
   styleUrls: ['./user-list.component.sass']
 })
 export class UserListComponent implements OnInit {
+
+  constructor(public dialog: MatDialog) {}
 
   // public displayedCols: string[] = [ "username","email","lastName","departmentId","jobTitleId", "actions"]
   public displayedCols: string[] = [ "username","firstName","lastName","departmentId","jobTitleId", "email","actions"]
@@ -29,5 +33,18 @@ export class UserListComponent implements OnInit {
 
   deleteUser(userId: string) {
     console.log(`Eliminar: ${userId}`);
+  }
+
+  openConfirmationDialog(userId: string): void {
+    const dialogRef = this.dialog.open(DialogDeleteComponent, {
+      width: '250px',
+      data: { userId }
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        console.log('Usuario eliminado');
+      }
+    });
   }
 }
