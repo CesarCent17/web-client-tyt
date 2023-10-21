@@ -3,6 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   templateUrl: 'dialog-delete.component.html',
+  styleUrls: ['./dialog-delete.component.sass'],
 })
 export class DialogDeleteComponent {
   constructor(
@@ -15,6 +16,6 @@ export class DialogDeleteComponent {
   }
 
   onConfirmClick(): void {
-    this.dialogRef.close(true); 
+    this.dialogRef.close(true);
   }
 }

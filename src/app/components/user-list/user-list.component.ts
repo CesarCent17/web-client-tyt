@@ -37,8 +37,12 @@ export class UserListComponent implements OnInit {
 
   openConfirmationDialog(userId: string): void {
     const dialogRef = this.dialog.open(DialogDeleteComponent, {
-      width: '250px',
-      data: { userId }
+      width: '500px',
+      height: '140px',
+      data: { userId },
+      position: {
+        top: '85px',
+      }
     });
 
     dialogRef.afterClosed().subscribe((result) => {
