@@ -6,7 +6,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { Observable, map } from 'rxjs';
 import { DialogDeleteComponent } from '../dialog-delete/dialog-delete.component';
 
-
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
@@ -15,7 +14,6 @@ import { DialogDeleteComponent } from '../dialog-delete/dialog-delete.component'
 export class UserListComponent implements OnInit {
 
   constructor(public dialog: MatDialog) {}
-
   // public displayedCols: string[] = [ "username","email","lastName","departmentId","jobTitleId", "actions"]
   public displayedCols: string[] = [ "username","firstName","lastName","departmentId","jobTitleId", "email","actions"]
 
