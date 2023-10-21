@@ -1,3 +1,6 @@
+import { Department } from "./department";
+import { JobTitle } from "./jobtitle";
+
 export interface User {
   id: string
   username: string;
@@ -6,6 +9,6 @@ export interface User {
   middleName: string;
   lastName: string;
   secondLastName: string;
-  departmentId: string;
-  jobTitleId: string; 
+  department: Department;
+  jobTitle: JobTitle;
 }

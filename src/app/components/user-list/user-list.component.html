@@ -24,13 +24,13 @@
 
     <ng-container matColumnDef="departmentId">
       <mat-header-cell *matHeaderCellDef>Departamento</mat-header-cell>
-      <mat-cell *matCellDef="let user">{{ user.departmentId }}</mat-cell>
+      <mat-cell *matCellDef="let user">{{ user.department.name }}</mat-cell>
       <mat-footer-cell *matFooterCellDef></mat-footer-cell>
     </ng-container>
 
     <ng-container matColumnDef="jobTitleId">
       <mat-header-cell *matHeaderCellDef>Cargo</mat-header-cell>
-      <mat-cell *matCellDef="let user">{{ user.jobTitleId }}</mat-cell>
+      <mat-cell *matCellDef="let user">{{ user.jobTitle.name }}</mat-cell>
       <mat-footer-cell *matFooterCellDef></mat-footer-cell>
     </ng-container>
 
