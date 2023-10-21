@@ -35,6 +35,8 @@ export class NavComponent {
         departmentId: '',
         jobTitleId: '',
       },
+      width: '768px',
+      // height: '680px',
     });
 
     dialogRef.afterClosed().subscribe((result) => {
