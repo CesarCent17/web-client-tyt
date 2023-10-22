@@ -24,7 +24,7 @@ export class UserListComponent implements OnInit {
   ngOnInit(): void {
     this.loadUsers();
     this.eventService.getEvent().subscribe((msg) => {
-      if(msg === "UserSaved"){
+      if(msg === "UserSaved" || msg === "DeletedUser"){
         this.loadUsers();
       }
     });

@@ -23,4 +23,9 @@ export class UserService {
     return this.http.post<ApiResponse<User>>(this.apiUrl, userData);
   }
 
+  deleteUser(userId: string): Observable<ApiResponse<string>> {
+    const userUrl = `${this.apiUrl}${userId}`;
+    return this.http.delete<ApiResponse<string>>(userUrl);
+  }
+
 }
