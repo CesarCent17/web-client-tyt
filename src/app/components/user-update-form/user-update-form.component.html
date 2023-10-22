@@ -1,0 +1,83 @@
+<form [formGroup]="userForm" class="modal-form">
+  <div class="form-colum">
+    <h3 class="title">Editar usuario</h3>
+  </div>
+  <hr />
+  <div class="form">
+    <div class="form-column form-column-1">
+      <div class="input">
+        <p class="label label-departmentId">Departamento:</p>
+        <mat-form-field class="field">
+          <mat-select formControlName="departmentId">
+            <mat-option *ngFor="let department of departments" [value]="department.value">{{ department.viewValue }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+
+      <div class="input">
+        <p class="label label-username">Usuario:</p>
+        <mat-form-field class="field">
+          <input matInput formControlName="username" />
+        </mat-form-field>
+      </div>
+
+      <div class="input">
+        <p class="label label-firstName">Primer Nombre:</p>
+        <mat-form-field class="field">
+          <input matInput formControlName="firstName" />
+        </mat-form-field>
+      </div>
+
+      <div class="input">
+        <p class="label label-lastName">Primer Apellido:</p>
+        <mat-form-field class="field">
+          <input matInput formControlName="lastName" />
+        </mat-form-field>
+      </div>
+
+      <!-- Columna 2 -->
+    </div>
+    <div class="form-column form-column-2">
+      <div class="input">
+        <p class="label label-jobTitleId">Cargo:</p>
+        <mat-form-field class="field">
+          <mat-select formControlName="jobTitleId">
+            <mat-option *ngFor="let job of jobTitles" [value]="job.value">{{ job.viewValue }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+
+      <div class="input">
+        <p class="label label-email">Email:</p>
+        <mat-form-field class="field">
+          <input matInput formControlName="email" />
+        </mat-form-field>
+      </div>
+
+      <div class="input">
+        <p class="label label-middleName">Segundo Nombre:</p>
+        <mat-form-field class="field">
+          <input matInput formControlName="middleName" />
+        </mat-form-field>
+      </div>
+
+      <div class="input">
+        <p class="label label-secondLastName">Segundo Apellido:</p>
+        <mat-form-field class="field">
+          <input matInput formControlName="secondLastName" />
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button mat-button (click)="updateUser()" color="primary" class="update">
+      Actualizar
+    </button>
+    <button mat-button (click)="cancel()" color="warn" class="cancel">
+      Cancelar
+    </button>
+  </div>
+</form>

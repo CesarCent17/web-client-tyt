@@ -19,7 +19,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { DialogDeleteComponent } from './components/dialog-delete/dialog-delete.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { EventService } from '../app/services/event.service'
+import { EventService } from '../app/services/event.service';
+import { UserUpdateFormComponent } from './components/user-update-form/user-update-form.component'
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { EventService } from '../app/services/event.service'
     SelectGenericComponent,
     UserRegistrationFormComponent,
     DialogDeleteComponent,
+    UserUpdateFormComponent,
   ],
   imports: [
     BrowserModule,

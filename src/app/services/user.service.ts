@@ -19,8 +19,18 @@ export class UserService {
     return this.http.get<ApiResponse<User[]>>(this.apiUrl);
   }
 
+  getUserById(userId: string): Observable<ApiResponse<User>> {
+    const userUrl = `${this.apiUrl}${userId}`;
+    return this.http.get<ApiResponse<User>>(userUrl);
+  }
+
   saveUser(userData: UserSaveData): Observable<ApiResponse<User>> {
     return this.http.post<ApiResponse<User>>(this.apiUrl, userData);
+  }
+
+  updateUser(userData: UserSaveData, userId: string): Observable<ApiResponse<User>> {
+    const userUrl = `${this.apiUrl}${userId}`;
+    return this.http.put<ApiResponse<User>>(userUrl, userData);
   }
 
   deleteUser(userId: string): Observable<ApiResponse<string>> {
