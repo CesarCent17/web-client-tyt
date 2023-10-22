@@ -46,42 +46,15 @@ export class UserListComponent implements OnInit {
   ngOnInit(): void {
     this.loadUsers();
     this.eventService.getEvent().subscribe((msg) => {
-      if (msg === 'UserSaved' || msg === 'DeletedUser') {
+      if (msg === 'UserSaved' || msg === 'DeletedUser' || msg === 'UserUpdated') {
         this.loadUsers();
       }
     });
   }
 
-  // openUserUpdateDialog(userId: string): void {
-  //   let sendData: {
-  //     userData: UserSaveData;
-  //     userId: string;
-  //   } = {
-  //     userData: this.userData,
-  //     userId: userId,
-  //   };
-
-  //   const dialogRef = this.dialog.open(UserUpdateFormComponent, {
-  //     // width: '444px',
-  //     // data: { userId },
-  //     // position: {
-  //     //   top: '70px',
-  //     // }
-  //     data: { sendData },
-  //     width: '768px',
-  //   });
-
-  //   dialogRef.afterClosed().subscribe((result) => {
-  //     if (result) {
-  //       console.log('Usuario actualizado');
-  //     }
-  //   });
-  // }
-
   openUserUpdateDialog(userId: string): void {
     this.userService.getUserById(userId).subscribe((response) => {
       if (response.succeeded) {
-        // Cargar los datos del usuario en userData
         this.userData = {
           username: response.data.username,
           email: response.data.email,
@@ -89,11 +62,10 @@ export class UserListComponent implements OnInit {
           middleName: response.data.middleName,
           lastName: response.data.lastName,
           secondLastName: response.data.secondLastName,
-          departmentId: response.data.department.id, // Ajusta el acceso a tu objeto Department
-          jobTitleId: response.data.jobTitle.id, // Ajusta el acceso a tu objeto JobTitle
+          departmentId: response.data.department.id,
+          jobTitleId: response.data.jobTitle.id,
         };
-
-        // Abrir el diálogo con los datos cargados
+        
         const dialogRef = this.dialog.open(UserUpdateFormComponent, {
           data: { userData: this.userData, userId: userId },
           width: '768px',

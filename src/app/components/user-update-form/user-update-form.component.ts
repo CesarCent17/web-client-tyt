@@ -37,10 +37,6 @@ export class UserUpdateFormComponent {
       jobTitleId: data.userData.jobTitleId
     });
     this.userId = data.userId;
-    console.log(this.userId);
-    console.log(this.userForm.value);
-    console.log("estoy aquiii")
-
   }
 
   ngOnInit(): void {
@@ -48,19 +44,16 @@ export class UserUpdateFormComponent {
   }
 
   updateUser(): void {
-    // const userData = this.userForm.value;
-    // this.userService.saveUser(userData).subscribe(response => {
-    //   if (response.succeeded) {
-    //     console.log('Usuario guardado con éxito:', response.data);
-    //     this.eventService.emitEvent("UserSaved");
-    //   } else {
-    //     console.error('Error al guardar el usuario:', response.message);
-    //   }
-    //   this.dialogRef.close();
-    // });
     const userData = this.userForm.value;
-    console.log('Usuario actualizado con éxito:', userData);
-    this.dialogRef.close();
+    this.userService.updateUser(userData, this.userId).subscribe(response => {
+      if (response.succeeded) {
+        console.log('Usuario actualizado con éxito:', response.data);
+        this.eventService.emitEvent("UserUpdated");
+      } else {
+        console.error('Error al actualizar el usuario:', response.message);
+      }
+      this.dialogRef.close();
+    });
   }
 
   cancel(): void {
