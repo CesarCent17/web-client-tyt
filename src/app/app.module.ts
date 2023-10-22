@@ -17,6 +17,8 @@ import { UserRegistrationFormComponent } from './components/user-registration-fo
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { DialogDeleteComponent } from './components/dialog-delete/dialog-delete.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { DialogDeleteComponent } from './components/dialog-delete/dialog-delete.
     MatSelectModule,
     MatDialogModule,
     MatGridListModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
