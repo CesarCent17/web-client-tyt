@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ApiResponse } from '../interfaces/api-response'
 import { User } from '../interfaces/user'
 import { environment } from '../environments/environmentdev';
+import { UserSaveData } from '../interfaces/user-save-data';
 
 
 
@@ -16,6 +17,10 @@ export class UserService {
 
   getUsers(): Observable<ApiResponse<User[]>> {
     return this.http.get<ApiResponse<User[]>>(this.apiUrl);
+  }
+
+  saveUser(userData: UserSaveData): Observable<ApiResponse<User>> {
+    return this.http.post<ApiResponse<User>>(this.apiUrl, userData);
   }
 
 }

@@ -19,6 +19,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { DialogDeleteComponent } from './components/dialog-delete/dialog-delete.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { EventService } from '../app/services/event.service'
 
 
 @NgModule({
@@ -45,7 +46,7 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
