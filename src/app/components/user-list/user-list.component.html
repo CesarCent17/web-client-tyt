@@ -1,5 +1,5 @@
 <section class="example-container mat-elevation-z8" tabindex="0">
-  <table *ngIf="(dataSource$ | async) as response" mat-table [dataSource]="response.data">
+  <table *ngIf="(dataSource$ | async) as response" mat-table [dataSource]="response.data" class="table-user-list">
     <ng-container matColumnDef="username">
       <mat-header-cell *matHeaderCellDef>Usuario</mat-header-cell>
       <mat-cell *matCellDef="let user">{{ user.username }}</mat-cell>
@@ -55,7 +55,7 @@
 
     <mat-header-row *matHeaderRowDef="displayedCols" ></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedCols" class="example-element-row"></mat-row>
-    <mat-footer-row *matFooterRowDef="displayedCols; sticky: true"></mat-footer-row>
+    <mat-footer-row *matFooterRowDef="displayedCols;" class="tfooter"></mat-footer-row>
   </table>
   <div>
 
